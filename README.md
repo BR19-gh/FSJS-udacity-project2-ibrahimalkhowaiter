@@ -54,6 +54,8 @@ POSTGRES_USER="postgres"
 
 POSTGRES_DB="store"
 
+POSTGRES_TEST_DB="store_test"
+
 DATABASE_URL="postgresql://postgres:password@localhost:5432/store"
 
 ROOT_USER_PASSWORD="password"
@@ -63,6 +65,8 @@ SALT_ROUNDS="10"
 JWT_SECRET="super-secure-jwt-secret"
 
 PORT=3000
+
+ENV="dev"
 
 ```
 
@@ -150,6 +154,11 @@ yarn start
 
 ### To  test  the app, type:
 
+You should first create test database via:
+```bash
+create database store_test;
+```
+and then run:
 ```bash
 
 yarn test

@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess 'node ./dist/server.js'",
-    "test": "tsc && jasmine --config=jasmine.json",
+    "test": "ENV=test tsc && jasmine --config=jasmine.json",
     "tsc": "tsc",
     "start": "tsc && node dist/src/server.js",
     "migrations": "db-migrate"

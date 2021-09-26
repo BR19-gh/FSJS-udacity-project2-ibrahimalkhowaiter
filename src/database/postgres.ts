@@ -2,9 +2,21 @@ import { Client } from "pg";
 
 import { User } from "../models";
 
-export const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-});
+// @ts-ignore
+export let client 
+
+
+if (process.env.ENV=="dev"){
+   client = new Client({
+    connectionString: process.env.DATABASE_URL,
+  });
+}
+else if (process.env.ENV=="test"){
+  client = new Client({
+   connectionString: process.env.DATABASE_URL_TEST,
+ });
+}
+
 
 async function createRootUser() {
   const password = process.env.ROOT_USER_PASSWORD || "password";
@@ -23,7 +35,7 @@ export async function connect() {
     await client.connect();
     await createRootUser();
   } catch (e) {
-    console.log("Error: Cannot Starting Connecting to PG Database:", e);
+    console.log("Error: Cannot Start Connect to PG Database:", e);
   }
 }
 
