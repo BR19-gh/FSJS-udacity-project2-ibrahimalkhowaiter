@@ -150,6 +150,8 @@ You should first create test database via:
 create database store_test;
 ```
 
+<br>
+
 Then change the path of DATABASE_URL to the same path of DATABASE_URL_TEST in `.env` file
 
 <br>
