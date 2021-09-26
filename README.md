@@ -152,7 +152,7 @@ yarn start
   
 <hr>
 
-### To  test  the app, type:
+### To  test  the app:
 
 You should first create test database via:
 ```bash
