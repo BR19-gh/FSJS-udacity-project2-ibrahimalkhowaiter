@@ -159,5 +159,10 @@ Order
 - id: number
 - status: string
 - products: [{ product_id: number, quantity: number }]
-- user_id: string
+- user_id: 
+
+order_products
+- order_id?: number
+- product_id: number
+- quantity: number
 ```

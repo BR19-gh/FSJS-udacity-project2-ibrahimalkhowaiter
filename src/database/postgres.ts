@@ -3,19 +3,9 @@ import { Client } from "pg";
 import { User } from "../models";
 
 // @ts-ignore
-export let client 
-
-
-if (process.env.ENV=="dev"){
-   client = new Client({
+export const client = new Client({
     connectionString: process.env.DATABASE_URL,
   });
-}
-else if (process.env.ENV=="test"){
-  client = new Client({
-   connectionString: process.env.DATABASE_URL_TEST,
- });
-}
 
 
 async function createRootUser() {

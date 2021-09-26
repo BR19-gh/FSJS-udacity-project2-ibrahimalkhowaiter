@@ -63,14 +63,8 @@ describe("PUT Tests:", () => {
 });
 
 describe("Other Tests:", () => {
-  it("Should be Able to Login", async () => {
-    const res = await request.post("/login/").send({ id: user.id, password: user.password });
-    expect(res.status).toBe(200);
-    expect(res.text).toBeTruthy();
-    const tokenData = token.verify(res.text);
-    expect(tokenData?.sub).toBe(user.id);
-    expect(tokenData?.admin).toBe(user.superuser);
-  });
+
+ 
 });
 
 });

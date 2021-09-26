@@ -48,25 +48,16 @@ Then create an `.env`  file and put the following environment variables inside i
 
 ```bash
 
-POSTGRES_PASSWORD="password"
-
+POSTGRES_PASSWORD="123456"
 POSTGRES_USER="postgres"
-
 POSTGRES_DB="store"
-
 POSTGRES_TEST_DB="store_test"
-
-DATABASE_URL="postgresql://postgres:password@localhost:5432/store"
-
+DATABASE_URL="postgresql://postgres:123456@localhost:5432/store"
+DATABASE_URL_TEST="postgresql://postgres:123456@localhost:5432/store_test"
 ROOT_USER_PASSWORD="password"
-
 SALT_ROUNDS="10"
-
 JWT_SECRET="super-secure-jwt-secret"
-
-PORT=3000
-
-ENV="dev"
+PORT="3000"
 
 ```
 
@@ -152,13 +143,23 @@ yarn start
   
 <hr>
 
-### To  test  the app:
+### To  test  the app, type:
 
 You should first create test database via:
 ```bash
 create database store_test;
 ```
-and then run:
+
+Then change the path of DATABASE_URL to the same path of DATABASE_URL_TEST in `.env` file
+
+<br>
+
+Then type:
+```bash
+db-migrate up
+```
+
+and then finally run:
 ```bash
 
 yarn test

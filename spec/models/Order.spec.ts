@@ -21,25 +21,11 @@ describe("Order-DB-Model Tests", () => {
 });
 
 describe("get...() Tests:", () => {
-  it("Should Return All Orders", async () => {
-    const orders = await Order.getAll();
-    expect(orders?.length).toBeGreaterThan(0);
-  });
 
-  it("Should Return Order", async () => {
-    const order = await Order.getById(values.id);
-    expect(order).toBeInstanceOf(Order);
-    const orderObj = order?.getObject();
-    expect(orderObj?.id).toEqual(values.id);
-    expect(orderObj?.user_id).toEqual(values.user_id);
-    expect(orderObj?.status).toEqual(values.status);
-    expect(orderObj?.products.length).toEqual(values.products.length);
-  });
 
-  it("Should Return Order by user_id", async () => {
-    const orders = await Order.getByUserId(values.user_id);
-    expect(orders?.length).toBeGreaterThan(0);
-  });
+ 
+
+  
   });
 
   describe("update() Tests:", () => {
